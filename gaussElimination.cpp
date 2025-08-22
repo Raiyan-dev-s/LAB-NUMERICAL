@@ -54,6 +54,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         cout << "x" << i + 1 << " = " << fixed << setprecision(6) << x[i] << endl;
     }
-
+    cout<<"Raiyan Hasan\n";
+    cout<<"ID:2048\n";
     return 0;
 }
