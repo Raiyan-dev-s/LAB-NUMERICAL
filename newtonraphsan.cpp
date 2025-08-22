@@ -44,6 +44,8 @@ int main() {
 
         if (fabs(x_next - x) < tolerance) {
             cout << "\nRoot found: " << x_next << endl;
+                cout<<"Raiyan Hasan\n";
+    cout<<"ID:2048\n";
             return 0;
         }
 
@@ -52,5 +54,6 @@ int main() {
     }
 
     cout << "\nDid not converge within " << maxIter << " iterations." << endl;
+    
     return 0;
 }
