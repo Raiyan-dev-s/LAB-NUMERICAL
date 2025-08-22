@@ -42,6 +42,8 @@ int main() {
      
         if (fabs(fc) < tolerance) {
             cout << "\nRoot found: " << c << " after " << i << " iterations.\n";
+                cout<<"Raiyan Hasan\n";
+    cout<<"ID:2048\n";
             return 0;
         }
 
@@ -56,5 +58,6 @@ int main() {
     }
 
     cout << "\nRoot after " << maxIter << " iterations is approximately: " << c << "\n";
+
     return 0;
 }
