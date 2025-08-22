@@ -41,6 +41,8 @@ int main() {
 
         if (fabs(f2) < tolerance) {
             cout << "\nRoot found at x = " << x2 << " after " << i << " iterations." << endl;
+             cout<<"Raiyan Hasan\n";
+    cout<<"ID:2048\n";
             return 0;
         }
 
