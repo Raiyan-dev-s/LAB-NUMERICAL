@@ -1,24 +1,20 @@
 #include <iostream>
-#include <vector>
-#include <iomanip>
 using namespace std;
 
 int main() {
     int n;
-    cout << "Enter the number of variables: ";
+    cout << "Enter number of variables: ";
     cin >> n;
 
-    vector<vector<double>> a(n, vector<double>(n + 1));
-    vector<double> x(n);
+    double a[20][21];
 
-    cout << "Enter the augmented matrix (coefficients + constants):\n";
+    cout << "Enter augmented matrix (coefficients + constant):\n";
     for (int i = 0; i < n; i++) {
         for (int j = 0; j <= n; j++) {
             cin >> a[i][j];
         }
     }
 
-   
     for (int i = 0; i < n; i++) {
        
         if (a[i][i] == 0) {
@@ -28,31 +24,40 @@ int main() {
                 cout << "No unique solution exists.\n";
                 return 0;
             }
-            swap(a[i], a[swapRow]);
+            for (int k = 0; k <= n; k++) {
+                swap(a[i][k], a[swapRow][k]);
+            }
         }
 
-   
+     
+        double pivot = a[i][i];
+        for (int k = 0; k <= n; k++) {
+            a[i][k] /= pivot;
+        }
+
+    
         for (int j = i + 1; j < n; j++) {
-            double ratio = a[j][i] / a[i][i];
-            for (int k = i; k <= n; k++) {
-                a[j][k] -= ratio * a[i][k];
+            double factor = a[j][i];
+            for (int k = 0; k <= n; k++) {
+                a[j][k] -= factor * a[i][k];
             }
         }
     }
 
-    
+  
+    double x[20];
     for (int i = n - 1; i >= 0; i--) {
         x[i] = a[i][n];
         for (int j = i + 1; j < n; j++) {
             x[i] -= a[i][j] * x[j];
         }
-        x[i] /= a[i][i];
+        x[i] /= a[i][i]; 
     }
 
-    
     cout << "\nSolution:\n";
+    
     for (int i = 0; i < n; i++) {
-        cout << "x" << i + 1 << " = " << fixed << setprecision(6) << x[i] << endl;
+        cout << "x" << i + 1 << " = " << x[i] << "\n";
     }
     cout<<"Raiyan Hasan\n";
     cout<<"ID:2048\n";
